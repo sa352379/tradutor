@@ -37,21 +37,23 @@ JavaScript
    json (formato mais amigavel)
 */
 
+}
+
 let inputTexto = document.querySelector(".input-texto")
 
 
 async function traduzir(){
+    console.log(inputTexto.value)
 
-    let endereco = "https://api.mymemory.translated.net/get?q=" 
-    + inputTexto.value
-    + "&langpair=pt-BR|en"
+    let endereco = "https://api.mymemory.translated.net/get?="+inputTexto.value+"&langpair=pt-BR|en"
 
     let resposta = await fetch(endereco)
 
     let dados = await resposta.json()
-    
+
     console.log(dados)
 
 }
 // clicou no botao -> chama a funcao -> monto o enderco ->
 // chamo o servidor -> peco esperar -> responde 
+
